@@ -47,7 +47,7 @@
     color: var(--color-main-blue);
   }
 }
-/* h2タイトル */
+/* TOP：h2タイトル */
 .title-wrap {
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@
   color: var(--color-main-blue);
   line-height: 1.4;
 }
-/* h3サブタイトル */
+/* TOP：h3サブタイトル */
 .subtitle {
   font-size: 20px;
   font-weight: normal;
@@ -86,7 +86,7 @@
   letter-spacing: 4%;
   padding-bottom: 16px;
 }
-/* 説明文 */
+/* TOP：説明文 */
 .section-description {
   line-height: 1.8;
   letter-spacing: 4%;
@@ -1037,10 +1037,10 @@
 }
 @keyframes logo-slider {
   from {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
   to {
-    transform: translateX(calc(0));
+    transform: translateX(calc(-50%));
   }
 }
 
@@ -1326,3 +1326,420 @@
 }
 
 /* footerここまで----------------------------  */
+
+/* 下層ページ共通ここから-----------------------  */
+/* fv */
+.page__fv {
+  padding-top: 160px;
+  background-color: rgba(244, 244, 244, 0.7);
+  position: relative;
+}
+.page__title-wrap {
+  width: 78%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+}
+.page__title--jp {
+  font-size: 16px;
+  letter-spacing: 6%;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.page__title--jp::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url(../img/icon-dot-6px.svg);
+  background-size: cover;
+  background-position: center;
+}
+.page__title--en {
+  font-size: 42px;
+  color: var(--color-main-blue);
+  line-height: 1;
+  letter-spacing: 10%;
+}
+.page__fv-image-wrap {
+  padding-top: 24px;
+  position: relative;
+  background-image: linear-gradient(
+    rgba(244, 244, 244, 0.7) 50%,
+    var(--color-bg-white) 50%
+  );
+  overflow: hidden;
+}
+.page__fv-image {
+  width: 78%;
+  margin-inline: auto;
+  border-radius: 20px;
+  aspect-ratio: 1120/454;
+  object-fit: cover;
+  z-index: 15;
+  position: relative;
+}
+.logo__slider.is--page {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+.page__intro {
+  padding: 64px 0 240px 0;
+  text-align: center;
+  background-color: var(--color-bg-white);
+  display: grid;
+  grid-template-columns: 18% 1fr 18%;
+}
+.page_intro-copy {
+  margin-inline: auto;
+}
+.message-copy--company {
+  padding-left: 0;
+}
+.page__intro-text {
+  line-height: 2.1;
+  letter-spacing: 8%;
+}
+.page__intro-gallery {
+  position: relative;
+}
+.page__intro-gallery img {
+  border-radius: 4px;
+}
+.gallery-image-left {
+  position: absolute;
+  bottom: -30%;
+  right: 0;
+}
+.gallery-image-right {
+  position: absolute;
+  top: 0;
+  right: 32px;
+}
+.line-animation--page-intro {
+  position: absolute;
+  bottom: -7%;
+}
+
+/* h2タイトル */
+.page__section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 24px;
+}
+.page__section-title--en {
+  font-size: 16px;
+  font-weight: 200;
+  color: var(--color-main-blue);
+  letter-spacing: 8%;
+}
+.page__section-title--jp {
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--color-keyword);
+  line-height: 1;
+  letter-spacing: 4%;
+}
+/* container */
+.page__container {
+  width: 90%;
+  max-width: 1120px;
+  margin-inline: auto;
+}
+@media (max-width: 1080px) {
+  .page__intro {
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: space-between;
+    gap: 3%;
+  }
+  .page__intro-contet {
+    text-align: left;
+    padding-right: 5%;
+  }
+  .page__intro-gallery.is-left {
+    order: 1;
+  }
+  .gallery-image-left {
+    position: relative;
+  }
+  .page__intro-gallery.is-right {
+    order: 2;
+  }
+  .gallery-image-right {
+    position: relative;
+    right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .page__fv {
+    padding-top: 112px;
+    /* overflow-x: hidden; */
+  }
+  .page__container {
+    width: 100%;
+    padding: 0 6%;
+  }
+  .page__title-wrap {
+    width: 100%;
+    padding: 0 6%;
+  }
+  .page__title--jp {
+    font-size: 15px;
+  }
+  .page__title--jp::before {
+    width: 20px;
+    height: 20px;
+  }
+  .page__title--en {
+    font-size: 32px;
+  }
+  .page__fv-image-wrap {
+    padding-bottom: 40px;
+  }
+  .page__fv-image {
+    width: 88%;
+    aspect-ratio: 342/216;
+  }
+  .page__intro-contet {
+    padding-right: 0;
+  }
+  .message-copy--company {
+    width: 100%;
+  }
+  .logo__slider.is--page {
+    z-index: 16;
+    top: auto;
+    bottom: 0;
+    translate: 0 -50%;
+    padding: 0;
+  }
+  .logo__slider.is--page img {
+    width: 860px;
+  }
+  .line-animation--page-intro {
+    bottom: 2%;
+  }
+  .page__section-title--en {
+    font-size: 15px;
+  }
+  .page__section-title--jp {
+    font-size: 22px;
+  }
+}
+@media (max-width: 600px) {
+  .page__intro-gallery.is-left {
+    order: 1;
+  }
+  .gallery-image-left {
+    position: relative;
+  }
+  .page__intro-gallery.is-right {
+    order: 2;
+  }
+  .gallery-image-right {
+    position: relative;
+    margin-left: auto;
+    right: unset;
+  }
+  .page__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 6% 136px 6%;
+  }
+}
+
+/* 下層ページ共通ここまで-----------------------  */
+
+/* 会社概要ここから-----------------------  */
+/* 社長挨拶 */
+.page__company-message {
+  margin-bottom: 88px;
+}
+.company-message__inner {
+  display: flex;
+  gap: 6%;
+}
+.company-message__imaage {
+  width: 42%;
+  min-width: 264px;
+  background-color: var(--color-bg-gray);
+  border-radius: 10px;
+}
+.company-message__imaage img {
+  aspect-ratio: 352/384;
+}
+.company-message__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.company-message__text p {
+  line-height: 1.8;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+.company-message__profile {
+  margin-top: 16px;
+}
+.company-message__position {
+  font-size: 15px;
+  color: var(--color-keyword);
+  letter-spacing: 4%;
+}
+.company-message__name {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.company-message__name--jp {
+  font-size: 18px;
+  font-weight: 500;
+}
+.company-message__name--en {
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 8%;
+  color: #18447b;
+}
+
+/* 会社概要 */
+.page__company-profile {
+  background-color: var(--color-bg-gray);
+  padding: 132px 0;
+  position: relative;
+}
+.page__company-profile::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1692/218;
+  bottom: 0;
+  background-image: url("../img/contact-profile-bg.svg");
+  background-size: contain;
+  background-position: center;
+}
+.page__company-prohile-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.page__company-date-wrap {
+  width: 74%;
+  min-width: 640px;
+  max-width: 832px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: solid 2px var(--color-bg-white);
+  padding: 56px 7%;
+  border-radius: 20px;
+  z-index: 10;
+}
+.date-row {
+  display: grid;
+  grid-template-columns: 136px 1fr;
+}
+.date-dt,
+.date-dd {
+  padding: 24px 0;
+}
+.date-dt {
+  border-bottom: solid 1px var(--color-main-blue);
+  color: var(--color-main-blue);
+}
+.date-dd {
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: solid 1px var(--color-line-gray);
+}
+.date-dd span {
+  display: block;
+}
+.dd-address {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.map-link {
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+.map-link::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url(../img/company-icon-mappin.svg);
+  background-size: cover;
+  background-position: center;
+}
+@media (any-hover: hover) {
+  .map-link:hover {
+    opacity: 0.5;
+  }
+}
+/* 標識 */
+.page__company-sign {
+  margin: 88px 0 132px 0;
+}
+.page__company-sign-inner {
+  margin-inline: auto;
+}
+.page__section-title--sign {
+  text-align: center;
+}
+.sign-image {
+  width: 640px;
+  display: block;
+  margin-inline: auto;
+}
+
+@media (max-width: 767px) {
+  .company-message__inner {
+    display: block;
+  }
+  .company-message__imaage {
+    width: 100%;
+    max-width: 464px;
+    margin-inline: auto;
+  }
+  .company-message__imaage img {
+    aspect-ratio: 342/240;
+  }
+  .company-message__content {
+    margin-top: 20px;
+  }
+  .page__company-profile {
+    padding: 64px 0 120px 0;
+  }
+  .page__company-date-wrap {
+    min-width: unset;
+    width: 100%;
+    padding: 0 6% 32px 6%;
+  }
+  .date-row {
+    grid-template-columns: 112px 1fr;
+  }
+  .dd-address {
+    flex-wrap: wrap;
+  }
+  .page__company-profile::after {
+    aspect-ratio: 390 / 120;
+    background-size: cover;
+    background-position: 580px center;
+  }
+  .page__company-sign {
+    margin: 48px 0;
+  }
+}
+/* 会社概要ここまで-----------------------  */
